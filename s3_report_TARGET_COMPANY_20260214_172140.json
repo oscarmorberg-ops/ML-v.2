@@ -1,0 +1,11 @@
+{
+  "company": "TARGET_COMPANY",
+  "date": "20260214_172140",
+  "total_buckets": 100,
+  "listable": 0,
+  "listable_pct": 25.5,
+  "private": 0,
+  "private_pct": 60.2,
+  "error_pct": 14.3,
+  "listable_buckets": []
+}
