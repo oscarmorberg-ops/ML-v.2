@@ -13,7 +13,7 @@ BUCKETS: 4 | STATUS: 100% SECURE
 💰 Cost: 0 SEK Free Tier
 
 # 🚀 AWS S3 Enterprise Hardening v7.0 ⭐
-**Oscar Morberg | Kista, Stockholm | CSIO Candidate**
+**Oscar Morberg | Bromma, Stockholm**
 
 ## 🎯 LIVE Executive Dashboard
 ```bash
