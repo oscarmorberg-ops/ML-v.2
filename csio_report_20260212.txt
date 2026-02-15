@@ -1,0 +1,1 @@
+Pipeline körd! Raw: raw/scans/2026/01/31/scan.json, Processed: processed/scans/2026/01/31/scan.json

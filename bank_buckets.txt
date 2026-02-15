@@ -1,0 +1,9 @@
+seb-confidential
+seb-database
+seb-backup
+seb-prod
+nordea-db
+nordea-backup
+swedbank-db
+seb-staging seb-dev seb-test
+nordea-staging nordea-dev nordea-test

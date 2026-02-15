@@ -1,0 +1,13 @@
+walmart
+amazon
+apple
+microsoft
+cvshealth
+costco
+jpmorgan
+berkshire
+exxon
+mckesson
+netflix
+spotify
+github

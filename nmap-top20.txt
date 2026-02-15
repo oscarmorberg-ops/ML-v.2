@@ -1,0 +1,91 @@
+# Nmap 7.94SVN scan initiated Fri Feb 13 15:44:38 2026 as: nmap -sV -sC --top-ports 20 -oN nmap-top20.txt 192.168.1.155
+Nmap scan report for 192.168.1.155
+Host is up (0.30s latency).
+
+PORT     STATE  SERVICE       VERSION
+21/tcp   closed ftp
+22/tcp   closed ssh
+23/tcp   closed telnet
+25/tcp   closed smtp
+53/tcp   open   domain        Cloudflare public DNS
+80/tcp   open   http
+| fingerprint-strings: 
+|   FourOhFourRequest: 
+|     HTTP/1.0 404 Not Found
+|     Connection: close
+|     Content-Type: text/html
+|     <h1>Not Found</h1>The requested URL /nice%20ports%2C/Tri%6Eity.txt%2ebak was not found on this server.
+|   GetRequest, HTTPOptions: 
+|     HTTP/1.0 200 OK
+|     Connection: close
+|     Content-type: text/html
+|     Cache-Control: no-cache, no-store, must-revalidate
+|     Pragma: no-cache
+|     Expires: 0
+|     <!DOCTYPE html>
+|     <html lang='en'>
+|     <head>
+|     <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'>
+|     <meta charset='UTF-8'>
+|     <title>Welcome to AmpliFi</title>
+|     <meta http-equiv="refresh" content="0;URL='select-device.php'" />
+|     </head>
+|     </html>
+|   Help: 
+|     HTTP/0.9 400 Bad Request
+|     Connection: Keep-Alive
+|     Keep-Alive: timeout=20
+|     Content-Type: text/html
+|     <h1>Bad Request</h1>
+|   RTSPRequest: 
+|     HTTP/1.0 400 Bad Request
+|     Connection: Keep-Alive
+|     Keep-Alive: timeout=20
+|     Content-Type: text/html
+|_    <h1>Bad Request</h1>
+|_http-title: Welcome to AmpliFi
+110/tcp  closed pop3
+111/tcp  closed rpcbind
+135/tcp  closed msrpc
+139/tcp  closed netbios-ssn
+143/tcp  closed imap
+443/tcp  closed https
+445/tcp  closed microsoft-ds
+993/tcp  closed imaps
+995/tcp  closed pop3s
+1723/tcp closed pptp
+3306/tcp closed mysql
+3389/tcp closed ms-wbt-server
+5900/tcp closed vnc
+8080/tcp closed http-proxy
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port80-TCP:V=7.94SVN%I=7%D=2/13%Time=698F38DF%P=x86_64-pc-linux-gnu%r(G
+SF:etRequest,1AC,"HTTP/1\.0\x20200\x20OK\r\nConnection:\x20close\r\nConten
+SF:t-type:\x20text/html\r\nCache-Control:\x20no-cache,\x20no-store,\x20mus
+SF:t-revalidate\r\nPragma:\x20no-cache\r\nExpires:\x200\r\n\r\n<!DOCTYPE\x
+SF:20html>\n<html\x20lang='en'>\n<head>\n<meta\x20name='viewport'\x20conte
+SF:nt='width=device-width,\x20initial-scale=1,\x20maximum-scale=1,\x20user
+SF:-scalable=no'>\n<meta\x20charset='UTF-8'>\n<title>Welcome\x20to\x20Ampl
+SF:iFi</title>\n<meta\x20http-equiv=\"refresh\"\x20content=\"0;URL='select
+SF:-device\.php'\"\x20/>\n</head>\n</html>\n")%r(HTTPOptions,1AC,"HTTP/1\.
+SF:0\x20200\x20OK\r\nConnection:\x20close\r\nContent-type:\x20text/html\r\
+SF:nCache-Control:\x20no-cache,\x20no-store,\x20must-revalidate\r\nPragma:
+SF:\x20no-cache\r\nExpires:\x200\r\n\r\n<!DOCTYPE\x20html>\n<html\x20lang=
+SF:'en'>\n<head>\n<meta\x20name='viewport'\x20content='width=device-width,
+SF:\x20initial-scale=1,\x20maximum-scale=1,\x20user-scalable=no'>\n<meta\x
+SF:20charset='UTF-8'>\n<title>Welcome\x20to\x20AmpliFi</title>\n<meta\x20h
+SF:ttp-equiv=\"refresh\"\x20content=\"0;URL='select-device\.php'\"\x20/>\n
+SF:</head>\n</html>\n")%r(RTSPRequest,79,"HTTP/1\.0\x20400\x20Bad\x20Reque
+SF:st\r\nConnection:\x20Keep-Alive\r\nKeep-Alive:\x20timeout=20\r\nContent
+SF:-Type:\x20text/html\r\n\r\n<h1>Bad\x20Request</h1>")%r(FourOhFourReques
+SF:t,AC,"HTTP/1\.0\x20404\x20Not\x20Found\r\nConnection:\x20close\r\nConte
+SF:nt-Type:\x20text/html\r\n\r\n<h1>Not\x20Found</h1>The\x20requested\x20U
+SF:RL\x20/nice%20ports%2C/Tri%6Eity\.txt%2ebak\x20was\x20not\x20found\x20o
+SF:n\x20this\x20server\.")%r(Help,79,"HTTP/0\.9\x20400\x20Bad\x20Request\r
+SF:\nConnection:\x20Keep-Alive\r\nKeep-Alive:\x20timeout=20\r\nContent-Typ
+SF:e:\x20text/html\r\n\r\n<h1>Bad\x20Request</h1>");
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri Feb 13 15:46:02 2026 -- 1 IP address (1 host up) scanned in 83.63 seconds
+med. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri Feb 13 15:45:42 2026 -- 1 IP address (1 host up) scanned in 168.26 seconds
