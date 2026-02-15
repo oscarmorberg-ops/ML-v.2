@@ -1,5 +1,5 @@
 # 🚀 AWS S3 Enterprise Security Pipeline v7.0
-**Oscar Morberg | 25 min → CSIO-ready LIVE dashboard**
+**Oscar Morberg | 25 min → LIVE dashboard**
 
 ## 🎯 EXECUTIVE SECURITY DASHBOARD
 Kör för LIVE demo:
