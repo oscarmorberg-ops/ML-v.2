@@ -11,3 +11,10 @@ BUCKETS: 4 | STATUS: 100% SECURE
 🔒 Block Public Access: 4/4 enabled
 👤 Root MFA + IAM scanner user
 💰 Cost: 0 SEK Free Tier
+
+# 🚀 AWS S3 Enterprise Hardening v7.0 ⭐
+**Oscar Morberg | Kista, Stockholm | CSIO Candidate**
+
+## 🎯 LIVE Executive Dashboard
+```bash
+./dashboard.sh  # 30 sek CSIO-demo
