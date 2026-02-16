@@ -1,10 +1,5 @@
-# 🚀 AWS S3 Enterprise Security Pipeline v7.0
-**Oscar Morberg | 25 min → LIVE dashboard**
-
-## 🎯 EXECUTIVE SECURITY DASHBOARD
-Kör för LIVE demo:
-```bash
-./dashboard.sh
+# 🚀 AWS S3 Enterprise Security Pipeline v7.0 ⭐
+**Oscar Morberg | Bromma, Stockholm | 25 min → LIVE dashboard**
 
 BUCKETS: 4 | STATUS: 100% SECURE
 🌐 curl test: AccessDenied (world blocked)
@@ -12,9 +7,6 @@ BUCKETS: 4 | STATUS: 100% SECURE
 👤 Root MFA + IAM scanner user
 💰 Cost: 0 SEK Free Tier
 
-# 🚀 AWS S3 Enterprise Hardening v7.0 ⭐
-**Oscar Morberg | Bromma, Stockholm**
-
-## 🎯 LIVE Executive Dashboard
+## 🎯 LIVE Executive Dashboard (CSIO v8)
 ```bash
 ./dashboard.sh  # 30 sek CSIO-demo
