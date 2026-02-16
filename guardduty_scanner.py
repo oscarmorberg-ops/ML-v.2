@@ -12,7 +12,7 @@ def scan_guardduty_findings():
     """Scan GuardDuty findings för CSIO oversight"""
     gd = boto3.client('guardduty')
     
-    findings = gd.list_findings(DetectorId='YOUR_DETECTOR_ID')
+    findings = gd.list_findings(DetectorId='7cce33799064eaa5d7bbbaecb6ddab3b')
     print(f"CSIO GuardDuty: {len(findings['FindingIds'])} findings")
     
     return findings
