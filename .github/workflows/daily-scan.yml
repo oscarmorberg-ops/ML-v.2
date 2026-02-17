@@ -1,0 +1,14 @@
+name: Daily AWS Security Scan
+on:
+  schedule:
+    - cron: '0 6 * * *'  # 06:00 UTC
+  workflow_dispatch:
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Run Security Dashboard
+      run: |
+        pip install boto3
+        ./dashboard.sh
