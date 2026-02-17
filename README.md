@@ -13,3 +13,6 @@ BUCKETS: 4 | STATUS: 100% SECURE
 🔥 eu-north-1 (Stockholm): oscarmorberg-portfolio-2026 ✅ SECURE
 🔥 ap-northeast-1 (Tokyo): min-cybersec-pipeline-2026 ✅ SECURE  
 🔥 ap-northeast-3 (Osaka): oscar-guardduty-findings ✅ SECURE
+echo ""
+echo "✅ ENTERPRISE READY | OSCP/CSIO LEVEL | Oscar Morberg 2026"
+echo "📍 Bromma, Stockholm | AWS Free Tier | 100% SECURE"
