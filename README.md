@@ -16,3 +16,7 @@ BUCKETS: 4 | STATUS: 100% SECURE
 echo ""
 echo "✅ ENTERPRISE READY | OSCP/CSIO LEVEL | Oscar Morberg 2026"
 echo "📍 Bromma, Stockholm | AWS Free Tier | 100% SECURE"
+
+💼 CSIO-level: ✅
+🎯 OSCP portfolio: ✅ WORLD-CLASS 
+⏱️ Build time: 50min från zero → production
