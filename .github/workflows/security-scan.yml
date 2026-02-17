@@ -1,0 +1,9 @@
+name: Daily Security Scan
+on: [schedule, workflow_dispatch]
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - run: pip install boto3
+    - run: ./dashboard.sh

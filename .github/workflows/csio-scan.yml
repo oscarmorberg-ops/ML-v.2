@@ -1,0 +1,12 @@
+name: 🛡️ Daily CSIO Security Scan
+on:
+  schedule:
+    - cron: '0 8 * * 1'  # Måndag 08:00 CET
+  workflow_dispatch:
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - run: pip install -r requirements.txt
+    - run: ./dashboard.sh
