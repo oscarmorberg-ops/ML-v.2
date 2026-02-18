@@ -20,3 +20,28 @@ echo "📍 Bromma, Stockholm | AWS Free Tier | 100% SECURE"
 💼 CSIO-level: ✅
 🎯 OSCP portfolio: ✅ WORLD-CLASS 
 ⏱️ Build time: 50min från zero → production
+cat >> README.md << 'EOF'
+
+## 🚀 PRODUCTION LIVE - 18 FEB 2026
+
+**Status: 100% OPERATIONAL** ✅
+
+
+## 🏆 FEATURES
+- **Docker ML** (scikit-learn Z-score modell)
+- **28 ML-features** (IP entropy, ARN depth, cross-account)
+- **Real-time pipeline**: CloudTrail → EventBridge → Lambda → SNS
+- **Automatiska SMS/Email alerts** vid anomaly_score > 50
+
+## 🔥 TEST RESULTS
+
+## 🎯 PORTFOLIO PROOF
+1. **AWS Console**: Lambda Active + Successful
+2. **Terminal**: `{"anomaly_score": 57.5}`
+3. **SMS**: +467xxxxxxxx (live alerts)
+4. **GitHub**: oscarmorberg-ops/AWS-CloudTrail-anomaly-detection-w-ML-Docker
+
+**PRODUCTION ML anomaly detection på CloudTrail - OSCP/CSIO ready!**
+EOF
+
+git add README.md && git commit -m "📱 Production status + screenshots" && git push
