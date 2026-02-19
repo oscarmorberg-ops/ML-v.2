@@ -1,4 +1,0 @@
-elasticbeanstalk-us-west-2-123456
-nasa-earthdata-search-test
-test-bucket-1
-test-bucket-2
