@@ -1,7 +1,0 @@
-🚨 ERICSSON S3 LÄCKA HITTAD 🚨
-✅ ericsson.s3.amazonaws.com - PUBLIC FILES!
-✅ SEB, Handelsbanken, Swedbank, Nordea scannade
-✅ Volvo, Scania, IKEA coverage
-✅ SSH eu-north-1, eu-west-1, us-east-1
-✅ 50+ buckets testade
-oscarmorberg-ops/cybersec-s3-pipeline

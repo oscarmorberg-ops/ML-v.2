@@ -1,3 +1,0 @@
-seb-confidential seb-database seb-db seb-backup seb-prod
-nordea-confidential nordea-db nordea-backup
-swedbank-db swedbank-prod handlbank-db

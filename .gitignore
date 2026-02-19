@@ -1,19 +1,12 @@
-# Python Virtual Environments
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-env/
-venv/
-.venv/
-csio_env/
-.aws/
-
-# OS
-.DS_Store
- Thumbs.db
-*.save.*
-s3_report_*20260213_*.json
-amplifi-*
-Makefile
-company_patterns.txt
+*.save
+*.backup
+*.txt
+cookies.txt
+nmap*
+seb*
+spotify*
+azure*
+bank*
+*.json
+*.csv
+s3_report_*
