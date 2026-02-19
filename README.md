@@ -56,7 +56,7 @@ git add README.md && git commit -m " Production status + screenshots" && git pus
 - S3 Scanner: 47k buckets/sec
 - Response Time: **20min** (CSIO LVL 10)
 
-## Multiverse Access: LIVE
+## LIVE
 1. Git commit + push:
 git add README.md guardduty-ml-v8/
 <<<<<<< HEAD
