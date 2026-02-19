@@ -10,3 +10,5 @@ bank*
 *.json
 *.csv
 s3_report_*
+reports/*.json
+reports/*.csv
