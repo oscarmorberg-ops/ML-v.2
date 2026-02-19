@@ -45,7 +45,7 @@ EOF
 
 git add README.md && git commit -m "📱 Production status + screenshots" && git push
 
-# 🚀 CSIO Portfolio: 20min S3-malware Incident Response
+# CSIO Portfolio: 20min S3-malware Incident Response
 git add README.md && git commit -m " Production status + screenshots" && git push
 
 # CSIO Portfolio: 20min S3-malware Incident Response
@@ -60,7 +60,7 @@ git add README.md && git commit -m " Production status + screenshots" && git pus
 1. Git commit + push:
 git add README.md guardduty-ml-v8/
 <<<<<<< HEAD
-git commit -m "🎯 feat: CSIO 20min S3-malware response LIVE"
+git commit -m " feat: CSIO 20min S3-malware response LIVE"
 git commit -m " feat: CSIO 20min S3-malware response LIVE"
 git push origin main
 
