@@ -1,10 +1,10 @@
-FROM public.ecr.aws/lambda/python:3.12
+cat > Dockerfile << 'EOF'
+FROM python:3.11-slim
 
-# Installera deps
-COPY requirements.txt ${LAMBDA_TASK_ROOT}
-RUN pip install -r requirements.txt -t ${LAMBDA_TASK_ROOT}
+# Installera Lambda Runtime Interface Emulator
+RUN pip install awslambdaric
 
-# Kopiera HELA src/
-COPY src/ ${LAMBDA_TASK_ROOT}/
-
-CMD ["realtime.lambda_handler.handler"]
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY
