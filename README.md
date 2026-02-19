@@ -64,10 +64,5 @@ git commit -m " feat: CSIO 20min S3-malware response LIVE"
 git commit -m " feat: CSIO 20min S3-malware response LIVE"
 git push origin main
 
-2. Multiverse AWS CLI:
-aws sts assume-role --role-arn arn:aws:iam::YOUR-ACCOUNT:role/MultiverseCSIO \\
---role-session-name "Bromma-CSIO-2026" \\
---profile multiverse
-
-3. Test pipeline:
+2. Test pipeline:
 python guardduty-ml-v8/main.py --test-s3-malware
