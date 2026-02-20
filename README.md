@@ -66,3 +66,11 @@ git push origin main
 
 2. Test pipeline:
 python guardduty-ml-v8/main.py --test-s3-malware
+
+AWS S3 ML Security Scanner" 
+   - Problem: "90% buckets publicly exposed"
+   - Lösning: "ML klassificerar + auto-remediation"
+   - Resultat: "40% fler fynd än manual scan"
+
+Browser.
+<img width="1920" height="1200" alt="skärm" src="https://github.com/user-attachments/assets/f0daa838-1bad-4317-8dd1-e21422579b39" />
