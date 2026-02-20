@@ -73,4 +73,5 @@ AWS S3 ML Security Scanner"
    - Resultat: "40% fler fynd än manual scan"
 
 Browser.
+
 <img width="1920" height="1200" alt="skärm" src="https://github.com/user-attachments/assets/f0daa838-1bad-4317-8dd1-e21422579b39" />
