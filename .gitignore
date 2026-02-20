@@ -12,3 +12,4 @@ bank*
 s3_report_*
 reports/*.json
 reports/*.csv
+reports/
