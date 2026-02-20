@@ -72,5 +72,7 @@ AWS S3 ML Security Scanner"
    - Lösning: "ML klassificerar + auto-remediation"
    - Resultat: "40% fler fynd än manual scan"
 
-<img width="1920" height="1200" alt="skärm" src="https://github.com/user-attachments/assets/6975ecb1-11e2-4ab3-a0ae-3dfbafbc0965" />
+<img width="1920" height="1200" alt="Skärmbild från 2026-02-20 15-43-24" src="https://github.com/user-attachments/assets/8cb51dda-2d30-4599-adb2-07d7fdff876c" />
+
+
 
