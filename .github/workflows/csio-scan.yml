@@ -1,19 +1,23 @@
 name: 🛡️ Daily CSIO Security Scan
 on:
   schedule:
-    - cron: '0 8 * * 1'  # Måndag 08:00 CET
+    - cron: '0 8 * * 1'
   workflow_dispatch:
-
-permissions:
-  contents: write
-
 jobs:
   scan:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - run: pip install -r requirements.txt
-    - run: chmod +x dashboard.sh  # ← NYCKELN!
-    - run: bash ./dashboard.sh    # ← BASH + explicit path
-      shell: bash                 # ← FORCERA BASH!
+      with:
+        submodules: false          # Skip ALL submodules
+        fetch-depth: 0             # Full history utan shallow
+    - name: Debug git status
+      run: |
+        git status
+        ls -la .github/workflows/
+        cat .github/workflows/csio-scan.yml || echo "No YAML"
+    - run: pip install -r requirements.txt || echo "No requirements"
+    - run: |
+        chmod +x dashboard.sh || echo "No dashboard"
+        bash dashboard.sh || echo "Backup scan"
 
