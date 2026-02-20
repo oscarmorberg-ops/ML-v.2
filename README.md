@@ -72,6 +72,3 @@ AWS S3 ML Security Scanner"
    - Lösning: "ML klassificerar + auto-remediation"
    - Resultat: "40% fler fynd än manual scan"
 
-Browser. Vivaldi
-<img width="1920" height="1200" alt="skärm" src="https://github.com/user-attachments/assets/f3c350a7-5823-48c3-979c-ff0bc65f9ea6" />
-
