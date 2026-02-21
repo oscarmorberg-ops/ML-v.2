@@ -1,0 +1,56 @@
+name: 🛡️ CSIO ML v2.0 Daily S3 Scanner
+on:
+  schedule:
+    - cron: '0 8 * * 1'  # Mån 08:00 CET
+  workflow_dispatch:  # Manual trigger
+  push:
+    branches: [ main ]
+
+jobs:
+  ml-scan:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Setup Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: Install Python dependencies
+      run: |
+        pip install boto3 pandas scikit-learn requests
+    
+    - name: Run ML S3 Security Scanner
+      run: python3 scanner.py
+    
+    - name: Generate dashboard.html
+      run: |
+        echo "<h1>🛡️ CSIO ML S3 Scan $(date)</h1>" > dashboard.html
+        echo "<h2>Latest GOLD Reports:</h2>" >> dashboard.html
+        ls -la scanners/aws/*GOLD*.json >> dashboard.html || echo "No new GOLD reports"
+        ls -la scanners/aws/*ULTRA*.json >> dashboard.html || echo "No new ULTRA reports"
+    
+    - name: Upload ML results
+      uses: actions/upload-artifact@v4
+      with:
+        name: s3-security-reports-v2
+        path: |
+          dashboard.html
+          scanners/aws/*.json
+    
+    - name: Create daily GitHub release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: daily-$(date +%Y%m%d)
+        release_name: ML v2.0 Daily Scan $(date +%Y%m%d)
+        body: |
+          🚀 CSIO ML S3 Security Scan
+          - 133+ commits pipeline
+          - dashboard.html LIVE
+          - GOLD/ULTRA reports attached
+        draft: false
+        prerelease: false
