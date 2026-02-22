@@ -1,0 +1,11 @@
+name: OSCP Toolkit CI/CD
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run SQLi scanner
+      run: python3 htb_sqli_scanner.py
+    - name: Run XSS scanner  
+      run: python3 htb_xss_scanner.py
