@@ -1,31 +1,9 @@
-# Python
 venv/
+env/
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
-.Python
-env/
-.env
-.venv/
-
-# IDEs
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# OS
 .DS_Store
-Thumbs.db
-
-# Archives
-*.zip
-*.tar.gz
-
-# Logs
 *.log
-
-# Temp
-csio-clean.zip
-csio-clean/
+*.zip
