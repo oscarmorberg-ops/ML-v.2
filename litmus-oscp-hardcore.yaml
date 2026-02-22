@@ -1,0 +1,60 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: NetworkChaos
+metadata:
+  name: oscp-network-partition
+  namespace: oscp-prod
+spec:
+  action: partition
+  mode: fixed-percent
+  selector:
+    namespaces: ["oscp-prod"]
+    labelSelectors:
+      app: oscp-toolkit
+  direction: both
+  partition:
+    partitions:
+    - 192.168.0.0/16
+    - 10.0.0.0/8
+  duration: '300s'
+  scheduler:
+    cron: '*/30 * * * *'  # Every 30min
+
+---
+apiVersion: chaos-mesh.org/v1alpha1
+kind: BlockChaos
+metadata:
+  name: oscp-aws-block
+  namespace: oscp-prod
+spec:
+  action: block
+  mode: fixed-pod
+  selector:
+    namespaces: ["oscp-prod"]
+    labelSelectors:
+      app.kubernetes.io/component: aws-scanner
+  ioPercent: 90
+  fillPercent: 80
+  target:
+    volumeNames:
+    - /var/lib/s3-scanner
+  duration: '120s'
+
+---
+apiVersion: chaos-mesh.org/v1alpha1
+kind: AWSChaos
+metadata:
+  name: oscp-ec2-chaos
+  namespace: oscp-prod
+spec:
+  action: instance-stop
+  mode: fixed-percent
+  selector:
+    namespaces: ["oscp-prod"]
+    labelSelectors:
+      service: aws-ec2-nodes
+  awsRegion: eu-north-1
+  instanceSelection:
+    maxInstances: 2
+    instanceTags:
+      oscp-cluster: "true"
+  duration: '600s'
