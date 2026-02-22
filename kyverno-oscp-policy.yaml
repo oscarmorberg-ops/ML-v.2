@@ -1,0 +1,55 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: oscp-kyverno-policies
+spec:
+  validationFailureAction: Enforce
+  background: true
+  rules:
+  - name: require-oscp-labels
+    match:
+      any:
+      - resources:
+          kinds:
+          - Pod
+    validate:
+      message: "OSCP requires environment and team labels"
+      pattern:
+        metadata:
+          labels:
+            oscp-environment: "?*"
+            oscp-team: "?*"
+  
+  - name: restrict-host-path
+    match:
+      any:
+      - resources:
+          kinds:
+          - Pod
+    validate:
+      message: "HostPath mounts prohibited in OSCP"
+      deny:
+        conditions:
+          all:
+          - key: "{{ request.operation }}"
+            operator: Equals
+            value: CREATE
+          - key: "{{ request.object.spec.volumes[].hostPath }}"
+            operator: Exists
+
+  - name: cpu-limit-enforced
+    match:
+      any:
+      - resources:
+          kinds:
+          - Pod
+    validate:
+      message: "CPU limits required for OSCP workloads"
+      foreach:
+      - list: "request.object.spec.containers"
+        deny:
+          conditions:
+            all:
+            - key: "{{ element.resources.limits.cpu || 'none' }}"
+              operator: Eq
+              value: "none"
