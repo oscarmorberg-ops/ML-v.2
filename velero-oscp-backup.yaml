@@ -1,0 +1,39 @@
+apiVersion: velero.io/v1
+kind: Backup
+metadata:
+  name: oscp-full-cluster-backup
+  namespace: velero
+spec:
+  includedNamespaces:
+  - oscp-prod
+  - oscp-staging
+  storageLocation: aws-eu-north-1
+  ttl: 720h0m0s  # 30 days
+
+---
+apiVersion: velero.io/v1
+kind: BackupStorageLocation
+metadata:
+  name: aws-eu-north-1
+  namespace: velero
+spec:
+  provider: aws
+  objectStorage:
+    bucket: oscp-velero-backups
+    prefix: backups
+  config:
+    region: eu-north-1
+    s3ForcePathStyle: "true"
+
+---
+apiVersion: velero.io/v1
+kind: Schedule
+metadata:
+  name: oscp-daily-backup
+  namespace: velero
+spec:
+  schedule: "0 2 * * *"  # Daily 02:00
+  template:
+    includedNamespaces:
+    - oscp-prod
+    ttl: 720h0m0s
