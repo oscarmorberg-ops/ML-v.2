@@ -1,0 +1,24 @@
+stages:
+  - scan
+  - deploy
+  - test
+
+sqli_scanner:
+  stage: scan
+  script:
+    - python3 htb_sqli_scanner.py
+  artifacts:
+    reports:
+      junit: sqli-results.xml
+
+oscp_deploy:
+  stage: deploy
+  script:
+    - docker build -t oscp-toolkit .
+    - docker push oscp-toolkit:latest
+  environment: production
+
+attack_chain_test:
+  stage: test
+  script:
+    - python3 attack_chain_runner.py
