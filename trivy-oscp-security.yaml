@@ -1,0 +1,27 @@
+apiVersion: scanning.apps.tanzu.vmware.com/v1beta1
+kind: ImageScan
+metadata:
+  name: oscp-toolkit-scan
+  namespace: oscp-prod
+spec:
+  namespaceSelector:
+    matchLabels:
+      oscp-scanner: "true"
+  scanSpec:
+    image:
+      pullPolicy: Always
+    trivy:
+      fullScan: true
+      vulnPolicy:
+        minCVSS: "7.0"
+        ignoreUnfixed: true
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: trivy-cache
+  namespace: oscp-prod
+data:
+  TRIVY_CACHE_DIR: "/var/lib/trivy"
+  TRIVY_NON_SSL: "false"
