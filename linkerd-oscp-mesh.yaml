@@ -1,0 +1,22 @@
+apiVersion: linkerd.io/v1alpha2
+kind: ServiceMesh
+metadata:
+  name: oscp-mesh
+spec:
+  trafficSplit:
+    - name: oscp-scanners-stable
+      service: oscp-toolkit
+      backends:
+      - oscp-toolkit-v2: 90
+      - oscp-toolkit-canary: 10
+
+---
+apiVersion: policy.linkerd.io/v1alpha1
+kind: HTTPRouteGroup
+metadata:
+  name: oscp-routes
+spec:
+  parentRefs:
+  - group: core
+    kind: Service
+    name: oscp-toolkit
