@@ -1,6 +1,0 @@
-cat > s3_scanner.py << 'EOF'
-#!/usr/bin/env
-cat > s3_scanner.py << 'EOF'
-#!/usr/bin/env python3
-import boto
-
