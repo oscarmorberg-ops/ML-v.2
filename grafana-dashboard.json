@@ -1,0 +1,7 @@
+{
+  "title": "CSIO OSCP Toolkit",
+  "panels": [
+    {"title": "SQLi Scan Rate", "type": "stat"},
+    {"title": "Attack Chain Success", "type": "gauge"}
+  ]
+}
