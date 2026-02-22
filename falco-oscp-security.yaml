@@ -1,0 +1,32 @@
+apiVersion: falco.org/v1beta1
+kind: Falco
+metadata:
+  name: oscp-falco
+  namespace: oscp-prod
+spec:
+  falco:
+    resources:
+      limits:
+        cpu: 200m
+        memory: 256Mi
+    runtimeConfig:
+      type: "crio"
+      jsonOutput: true
+      grpc:
+        enabled: true
+        bindAddress: "0.0.0.0:5060"
+
+---
+apiVersion: falco.org/v1beta1
+kind: FalcoRule
+metadata:
+  name: oscp-s3-exfiltration
+  namespace: oscp-prod
+spec:
+  rule: |
+    rule oscp_s3_exfil {
+      desc: Detect S3 bucket exfiltration from OSCP tools
+      condition: spawned_process and proc.name = aws and proc.args contains "s3 cp"
+      output: "S3 exfiltration detected (user=%user.name cmdline=%proc.cmdline)"
+      priority: WARNING
+    }
