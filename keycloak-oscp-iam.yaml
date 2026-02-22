@@ -1,0 +1,37 @@
+apiVersion: keycloak.org/v1alpha1
+kind: Keycloak
+metadata:
+  name: oscp-keycloak
+  namespace: oscp-prod
+spec:
+  instances: 1
+  podDisruptionBudget:
+    enabled: true
+
+---
+apiVersion: keycloak.org/v1alpha1
+kind: KeycloakRealm
+metadata:
+  name: oscp-realm
+  namespace: oscp-prod
+spec:
+  realm:
+    enabled: true
+    displayName: "OSCP Enterprise"
+    attributes:
+      "saml.response.header": "SAMLResponse"
+
+---
+apiVersion: keycloak.org/v1alpha1
+kind: KeycloakClient
+metadata:
+  name: oscp-toolkit-client
+  namespace: oscp-prod
+spec:
+  client:
+    clientType: "openid-connect"
+    standardFlowEnabled: true
+    directAccessGrantsEnabled: true
+    validRedirectUris:
+    - "https://oscp-toolkit.example.com/*"
+    protocol: "openid-connect"
