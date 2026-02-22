@@ -1,0 +1,23 @@
+apiVersion: install.istio.io/v1alpha1
+kind: IstioOperator
+spec:
+  components:
+    ingressGateways:
+    - name: oscp-gateway
+      enabled: true
+  meshConfig:
+    accessLogFile: /dev/stdout
+    enableTracing: true
+
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: oscp-scanners
+spec:
+  hosts:
+  - oscp-toolkit.example.com
+  http:
+  - route:
+    - destination:
+        host: oscp-toolkit
