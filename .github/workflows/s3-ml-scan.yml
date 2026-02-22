@@ -2,7 +2,7 @@ name: CSIO S3 ML Auto-Scan
 on:
   schedule:
     - cron: '0 7 * * 1'  # Mån 08:00 CET
-  workflow_dispatch:     # Manual körning
+  workflow_dispatch:
 jobs:
   scan:
     runs-on: ubuntu-latest
@@ -12,7 +12,13 @@ jobs:
       uses: actions/setup-python@v5
       with:
         python-version: '3.11'
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: eu-north-1
     - name: Run S3 ML Scanner
       run: python s3_ml_scanner.py
-      env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
