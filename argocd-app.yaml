@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: oscp-toolkit-prod
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/oscarmorberg-ops/cybersec-s3-pipeline
+    targetRevision: main
+    path: helm/
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: oscp-prod
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
