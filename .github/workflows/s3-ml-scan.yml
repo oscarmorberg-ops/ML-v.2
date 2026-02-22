@@ -1,20 +1,17 @@
-name: CSIO S3 ML Auto-Scan
-on:
-  schedule:
-    - cron: '0 7 * * 1'  # Mån 08:00 CET
-  workflow_dispatch:
+name: S3 ML Scanner
+on: [push, pull_request]
 jobs:
   scan:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - name: Setup Python
+    - name: Setup Python 3.11
       uses: actions/setup-python@v5
       with:
         python-version: '3.11'
-    - name: Install dependencies
+    - name: Install deps
       run: pip install -r requirements.txt
-    - name: Configure AWS Credentials
+    - name: AWS Creds (EU-North-1)
       uses: aws-actions/configure-aws-credentials@v4
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
