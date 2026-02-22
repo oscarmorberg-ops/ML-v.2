@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: oscp-slo-alerts
+  namespace: oscp-prod
+spec:
+  groups:
+  - name: oscp-slo
+    rules:
+    - alert: OSCPErrorBudgetBurn
+      expr: sum(rate(errors_total[5m])) / sum(rate(requests_total[5m])) > 0.05
+      for: 5m
+      labels:
+        severity: critical
