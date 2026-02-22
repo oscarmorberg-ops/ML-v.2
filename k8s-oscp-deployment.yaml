@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oscp-toolkit
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: oscp-scanners
+  template:
+    metadata:
+      labels:
+        app: oscp-scanners
+    spec:
+      containers:
+      - name: oscp-toolkit
+        image: oscp-toolkit:latest
+        command: ["python3", "attack_chain_runner.py"]
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
