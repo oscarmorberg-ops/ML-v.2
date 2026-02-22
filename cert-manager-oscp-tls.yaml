@@ -1,0 +1,55 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: oscp-letsencrypt-prod
+spec:
+  acme:
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email: oscp-admin@example.com
+    privateKeySecretRef:
+      name: oscp-letsencrypt-prod
+    solvers:
+    - http01:
+        ingress:
+          class: nginx
+
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: oscp-toolkit-tls
+  namespace: oscp-prod
+spec:
+  secretName: oscp-toolkit-tls
+  issuerRef:
+    name: oscp-letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: oscp-toolkit.example.com
+  dnsNames:
+  - oscp-toolkit.example.com
+  - "*.oscp-toolkit.example.com"
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: oscp-toolkit-ingress
+  namespace: oscp-prod
+  annotations:
+    cert-manager.io/cluster-issuer: oscp-letsencrypt-prod
+spec:
+  tls:
+  - hosts:
+    - oscp-toolkit.example.com
+    secretName: oscp-toolkit-tls
+  rules:
+  - host: oscp-toolkit.example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: oscp-toolkit
+            port:
+              number: 8080
