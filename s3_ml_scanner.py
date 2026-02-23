@@ -19,3 +19,5 @@ findings = gd.list_findings(DetectorId="7cce33799064eaa5d7bbbaecb6ddab3b")
 for bucket in buckets["Buckets"]:
     pab = s3.get_public_access_block(Bucket=bucket["Name"])
     print(f"  🔒 {bucket['Name']}: {pab}")
+ct = boto3.client("cloudtrail")
+trails = ct.describe_trails()
