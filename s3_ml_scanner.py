@@ -21,3 +21,5 @@ for bucket in buckets["Buckets"]:
     print(f"  🔒 {bucket['Name']}: {pab}")
 ct = boto3.client("cloudtrail")
 trails = ct.describe_trails()
+macie = boto3.client("macie2")
+classifiers = macie.list_classifiers()
