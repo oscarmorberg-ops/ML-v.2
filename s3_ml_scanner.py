@@ -14,3 +14,5 @@ for bucket in buckets['Buckets']:
 def risk_score(bucket):
     score = random.uniform(1, 10)
     return f"🔴 {score:.1f}/10"
+gd = boto3.client("guardduty")
+findings = gd.list_findings(DetectorId="7cce33799064eaa5d7bbbaecb6ddab3b")
