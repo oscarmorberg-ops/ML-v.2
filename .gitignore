@@ -2,6 +2,7 @@
 streamlit-env/
 ML-v.2/
 start_app.sh
+venv/
 
 # Python cache
 __pycache__/
