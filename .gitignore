@@ -1,9 +1,11 @@
-venv/
-env/
+# Virtual env (ALDRIG committa)
+streamlit-env/
+ML-v.2/
+start_app.sh
+
+# Python cache
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
+
+# OS
 .DS_Store
-*.log
-*.zip
