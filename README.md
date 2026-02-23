@@ -34,5 +34,6 @@ LIVE<img width="1920" height="1200" alt="ML" src="https://github.com/user-attach
 - min-cybersec-pipeline-2026  
 - oscar-guardduty-findings ⭐
 - oscarmorberg-portfolio-2026
+<img width="1920" height="1200" alt="ML 2" src="https://github.com/user-attachments/assets/2684ad35-20c7-4217-a944-08c04371cd6a" />
 
 **GuardDuty:** Aktiv (7cce33799064eaa5d7bbbaecb6ddab3b)
