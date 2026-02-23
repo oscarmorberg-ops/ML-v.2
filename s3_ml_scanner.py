@@ -16,3 +16,6 @@ def risk_score(bucket):
     return f"🔴 {score:.1f}/10"
 gd = boto3.client("guardduty")
 findings = gd.list_findings(DetectorId="7cce33799064eaa5d7bbbaecb6ddab3b")
+for bucket in buckets["Buckets"]:
+    pab = s3.get_public_access_block(Bucket=bucket["Name"])
+    print(f"  🔒 {bucket['Name']}: {pab}")
