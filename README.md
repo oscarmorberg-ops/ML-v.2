@@ -37,5 +37,6 @@ LIVE<img width="1920" height="1200" alt="ML" src="https://github.com/user-attach
 <img width="1920" height="1200" alt="ML 2" src="https://github.com/user-attachments/assets/2684ad35-20c7-4217-a944-08c04371cd6a" />
 
 **GuardDuty:** Aktiv (7cce33799064eaa5d7bbbaecb6ddab3b)
+
 Security NIST 800-53 policy
 <img width="1920" height="1200" alt="NIST policy" src="https://github.com/user-attachments/assets/5409cc7b-a65e-4ff6-be2b-34ed2d6da38e" />
