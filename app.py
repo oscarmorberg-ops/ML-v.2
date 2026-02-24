@@ -20,17 +20,17 @@ if st.session_state.aws_configured:
             os.environ['AWS_ACCESS_KEY_ID'] = st.session_state.AWS_ACCESS_KEY_ID
             os.environ['AWS_SECRET_ACCESS_KEY'] = st.session_state.AWS_SECRET_ACCESS_KEY
             os.environ['AWS_DEFAULT_REGION'] = 'eu-north-1'
-            
+
             s3 = boto3.client('s3')
             buckets = s3.list_buckets()
-            
+
             st.success(f"✅ **Found {len(buckets['Buckets'])} LIVE S3 buckets!**")
             st.balloons()
-            
+
             for bucket in buckets['Buckets']:
                 st.code(f"📦 {bucket['Name']}")
-                
+
         except Exception as e:
             st.error(f"❌ AWS Error: {str(e)}")
-            
+
 st.info("👈 Ange dina AWS keys → SCAN → LIVE resultat!")
