@@ -1,0 +1,10 @@
+name: ML Scanner Test
+on: [push]
+jobs:
+  test:
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@v4
+    - run: python3 --version
+    - run: pip3 install scikit-learn boto3 numpy
+    - run: echo "ML Runner ready!"
