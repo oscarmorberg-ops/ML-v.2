@@ -52,3 +52,12 @@ source ml_env/bin/activate
 - **10 sekunder** för 1000 portar på scanme.nmap.org
 
 ## Live Resultat
+
+## 🚀 Snabbstart
+```bash
+git clone https://github.com/oscarmorberg-ops/ML-v.2
+cd ML-v.2
+python3 -m venv ml_env
+source ml_env/bin/activate
+pip install -r requirements.txt
+python ml_scanner.py
