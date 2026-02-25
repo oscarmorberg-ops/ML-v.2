@@ -40,3 +40,26 @@ LIVE<img width="1920" height="1200" alt="ML" src="https://github.com/user-attach
 
 Security NIST 800-53 policy
 <img width="1920" height="1200" alt="NIST policy" src="https://github.com/user-attachments/assets/5409cc7b-a65e-4ff6-be2b-34ed2d6da38e" />
+✅ feat(security): OSCP Buffer Overflow ML detector
+✅ feat(api): /detect-overflow endpoint (OSCP validated)
+✅ feat(oscp): PWK lab automation (25pts Buffer Overflow)
+✅ docs(oscp): OSCP Buffer Overflow integration docs
+
+## 🚀 Quick Start (för SWE reviewers)
+```bash
+make dev     # Install + run locally
+make test    # Run pytest suite
+make deploy  # Deploy to EC2 t2.micro
+
+
+**Sen 2 sista commits:**
+
+```bash
+# 5. Requirements
+cat > requirements.txt << 'EOF'
+flask==2.3.3
+scikit-learn==1.3.2
+pytest==7.4.3
+black==23.12.1
+flake8==6.1.0
+poetry==1.6.1
