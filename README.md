@@ -40,3 +40,4 @@ LIVE<img width="1920" height="1200" alt="ML" src="https://github.com/user-attach
 
 Security NIST 800-53 policy
 <img width="1920" height="1200" alt="NIST policy" src="https://github.com/user-attachments/assets/5409cc7b-a65e-4ff6-be2b-34ed2d6da38e" />
+source ml_env/bin/activate
