@@ -1,6 +1,7 @@
 FROM python:3.11-slim
-WORKDIR /oscp-toolkit
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
 COPY . .
-RUN pip install requests pwntools
-RUN chmod +x *.py
-CMD ["python3", "oscp_dashboard.py"]
+EXPOSE 5000
+CMD ["python", "ml_app.py"]
