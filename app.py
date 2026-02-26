@@ -5,13 +5,18 @@ from time import time
 import psutil
 
 st.title("🚀 CSIO S3 ML Auto-Scanner v2")
-st.markdown("**LIVE ML Security Scanner** - Oscar Morberg | 499+ commits UK TOP 7%")
+st.markdown("**LIVE ML Security Scanner** - Oscar Morberg | 502 commits UK TOP 7%")
+
+# VERSION INFO (CSIO production standard)
+VERSION = "v2.3.0"
+BUILD_SHA = "5b7ab27"
+COMMIT_COUNT = "502"
 
 # AWS credentials
 if "aws_configured" not in st.session_state:
     st.session_state.aws_configured = False
 
-# METRICS FUNCTION (CSIO-level)
+# METRICS FUNCTION
 def get_metrics():
     start = time()
     return {
@@ -22,7 +27,7 @@ def get_metrics():
         'scanner_uptime': time()
     }
 
-# LIVE METRICS DASHBOARD (ALLTID synlig)
+# LIVE METRICS + VERSION DASHBOARD
 col1, col2, col3 = st.columns(3)
 with col1:
     st.metric("CPU", f"{psutil.cpu_percent():.1f}%")
@@ -30,6 +35,14 @@ with col2:
     st.metric("RAM", f"{psutil.virtual_memory().percent:.1f}%")
 with col3:
     st.metric("Response Time", f"{get_metrics()['response_time_ms']:.1f}ms")
+
+col4, col5, col6 = st.columns(3)
+with col4:
+    st.metric("Version", VERSION)
+with col5:
+    st.metric("Commit", BUILD_SHA[:7])
+with col6:
+    st.metric("Commits", COMMIT_COUNT)
 
 if st.button("🔑 Konfigurera AWS (privata keys)"):
     st.session_state.AWS_ACCESS_KEY_ID = st.text_input("Access Key ID", type="password")
@@ -59,4 +72,4 @@ if st.session_state.aws_configured:
         except Exception as e:
             st.error(f"❌ AWS Error: {str(e)}")
 
-st.info("👈 Ange AWS keys → VÄLJ region → SCAN → LIVE metrics + resultat!")
+st.info("👈 AWS keys → Region → SCAN → LIVE metrics + S3 resultat!")
