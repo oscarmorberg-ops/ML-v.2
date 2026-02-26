@@ -1,4 +1,3 @@
-cat > scanner.py << 'EOF'
 import boto3
 
 def check_encryption(bucket_name):
@@ -30,4 +29,3 @@ def check_encryption(bucket_name):
     
     return {'a02': False}
 
-EOF
