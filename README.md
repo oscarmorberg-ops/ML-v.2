@@ -95,4 +95,6 @@ make deploy # EC2 production
 make dev     # Local development + hot reload
 make test    # pytest coverage (GitHub Actions CI)
 make deploy  # EC2 t2.micro production deployment
+## Shscan
+<img width="1920" height="1200" alt="shscan" src="https://github.com/user-attachments/assets/a901aecd-5455-4719-aeaf-f08f4d61a24b" />
 
