@@ -19,3 +19,16 @@ def not_found(e):
 def internal_error(e):
     logger.error(f"500 error: {str(e)}")
     return jsonify({"error": "Internal server error"}), 500
+from collections import defaultdict
+import time
+rate_limit = defaultdict(list)
+
+@app.before_request
+def limit_rate():
+    now = time.time()
+    client_ip = request.remote_addr
+    recent = [t for t in rate_limit[client_ip] if now - t < 60]
+    if len(recent) > 10:
+        return jsonify({"error": "Rate limit exceeded"}), 429
+    recent.append(now)
+    rate_limit[client_ip] = recent
