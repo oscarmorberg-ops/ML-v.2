@@ -11,3 +11,11 @@ logger = logging.getLogger(__name__)
 @app.before_request
 def log_request():
     logger.info(f"Request: {request.method} {request.path}")
+@app.errorhandler(404)
+def not_found(e):
+    return jsonify({"error": "Endpoint not found"}), 404
+
+@app.errorhandler(500)
+def internal_error(e):
+    logger.error(f"500 error: {str(e)}")
+    return jsonify({"error": "Internal server error"}), 500
