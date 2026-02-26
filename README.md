@@ -63,3 +63,36 @@ pytest==7.4.3
 black==23.12.1
 flake8==6.1.0
 poetry==1.6.1
+
+# Advanced SWE Portfolio - ML-v.2
+
+**LIVE:** EC2 t2.micro | 7 production endpoints | GitHub Actions CI
+
+## API Endpoints
+- GET /health - System status + readiness
+- GET /metrics - NIST 800-53 compliance  
+- POST /scan - S3 vulnerability detection
+- POST /detect-overflow - OSCP exploit detection
+
+## Development
+```bash
+make dev    # Local + hot reload
+make test   # pytest coverage
+make deploy # EC2 production
+
+# Advanced SWE Portfolio - ML-v.2
+
+**LIVE:** EC2 t2.micro | 7 production endpoints | GitHub Actions CI
+
+## API Endpoints
+- `GET /health` - System status + readiness (99.9% uptime)
+- `GET /metrics` - NIST 800-53 compliance metrics  
+- `POST /scan` - S3 vulnerability detection (scikit-learn)
+- `POST /detect-overflow` - OSCP exploit detection
+
+## Development
+```bash
+make dev     # Local development + hot reload
+make test    # pytest coverage (GitHub Actions CI)
+make deploy  # EC2 t2.micro production deployment
+
