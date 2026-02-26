@@ -98,3 +98,14 @@ make deploy  # EC2 t2.micro production deployment
 ## Shscan
 <img width="1920" height="1200" alt="shscan" src="https://github.com/user-attachments/assets/a901aecd-5455-4719-aeaf-f08f4d61a24b" />
 
+
+| Dashboard | URL | Status |
+|-----------|-----|--------|
+| S3 Risk | `s3scan` → localhost:8501 | ✅ LIVE |
+| Security Hub | `shscan` → localhost:8503 | ✅ 27 findings |
+
+**Terminal Beast Mode:**
+```
+🛡️ s3scan + shscan → TOP i varje terminal!
+💾 git add . → 502 commits ready
+```
