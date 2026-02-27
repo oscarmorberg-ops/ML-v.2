@@ -16,9 +16,8 @@ Found {len(vulns)} public IAM policies:
 
 Multiverse demo-ready scanner!
         """
-        response = self.webhook.send({
-            "text": message
-        })
+response = self.webhook.send(text=message)
+
         print(f"✅ Slack alert sent: {response['status']}")
 
 # Test
