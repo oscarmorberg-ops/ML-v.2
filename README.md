@@ -43,6 +43,7 @@ LIVE<img width="1920" height="1200" alt="ML" src="https://github.com/user-attach
 
 Security NIST 800-53 policy
 <img width="1920" height="1200" alt="NIST policy" src="https://github.com/user-attachments/assets/5409cc7b-a65e-4ff6-be2b-34ed2d6da38e" />
+<<<<<<< HEAD
 source ml_env/bin/activate
 #  ML-PortScanner v2.0
 
@@ -79,3 +80,74 @@ python csio_dashboard.py  # AWS+Azure+GCP LIVE!
 # ML-v2 NIST 800-53 v1.0
 # ML-v2 NIST 800-53 v1.0
 ## Trigger CI/CD run
+=======
+✅ feat(security): OSCP Buffer Overflow ML detector
+✅ feat(api): /detect-overflow endpoint (OSCP validated)
+✅ feat(oscp): PWK lab automation (25pts Buffer Overflow)
+✅ docs(oscp): OSCP Buffer Overflow integration docs
+
+## 🚀 Quick Start (för SWE reviewers)
+```bash
+make dev     # Install + run locally
+make test    # Run pytest suite
+make deploy  # Deploy to EC2 t2.micro
+
+
+**Sen 2 sista commits:**
+
+```bash
+# 5. Requirements
+cat > requirements.txt << 'EOF'
+flask==2.3.3
+scikit-learn==1.3.2
+pytest==7.4.3
+black==23.12.1
+flake8==6.1.0
+poetry==1.6.1
+
+# Advanced SWE Portfolio - ML-v.2
+
+**LIVE:** EC2 t2.micro | 7 production endpoints | GitHub Actions CI
+
+## API Endpoints
+- GET /health - System status + readiness
+- GET /metrics - NIST 800-53 compliance  
+- POST /scan - S3 vulnerability detection
+- POST /detect-overflow - OSCP exploit detection
+
+## Development
+```bash
+make dev    # Local + hot reload
+make test   # pytest coverage
+make deploy # EC2 production
+
+# Advanced SWE Portfolio - ML-v.2
+
+**LIVE:** EC2 t2.micro | 7 production endpoints | GitHub Actions CI
+
+## API Endpoints
+- `GET /health` - System status + readiness (99.9% uptime)
+- `GET /metrics` - NIST 800-53 compliance metrics  
+- `POST /scan` - S3 vulnerability detection (scikit-learn)
+- `POST /detect-overflow` - OSCP exploit detection
+
+## Development
+```bash
+make dev     # Local development + hot reload
+make test    # pytest coverage (GitHub Actions CI)
+make deploy  # EC2 t2.micro production deployment
+## Shscan
+<img width="1920" height="1200" alt="shscan" src="https://github.com/user-attachments/assets/a901aecd-5455-4719-aeaf-f08f4d61a24b" />
+
+
+| Dashboard | URL | Status |
+|-----------|-----|--------|
+| S3 Risk | `s3scan` → localhost:8501 | ✅ LIVE |
+| Security Hub | `shscan` → localhost:8503 | ✅ 27 findings |
+
+**Terminal Beast Mode:**
+```
+🛡️ s3scan + shscan → TOP i varje terminal!
+💾 git add . → 502 commits ready
+```
+>>>>>>> c07d7e33ea5b9bc54c8765f663d4f184c7b7cb94

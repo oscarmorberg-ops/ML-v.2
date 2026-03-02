@@ -1,12 +1,18 @@
+<<<<<<< HEAD
 name: NIST Scanner CI
 on:
   push:
     branches: [ main ]
+=======
+name: CI
+on: [push, pull_request]
+>>>>>>> c07d7e33ea5b9bc54c8765f663d4f184c7b7cb94
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+<<<<<<< HEAD
     - name: Set up Python 3.12
       uses: actions/setup-python@v5
       with:
@@ -19,3 +25,15 @@ jobs:
       run: python3 s3_scanner_demo.py
     - name: NIST Compliant
       run: echo "✅ NIST 800-53 AC-3/SC-8/AU-2 compliant"
+=======
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - name: Install dependencies
+      run: |
+        pip install poetry
+        poetry install
+    - name: Run tests
+      run: poetry run pytest tests/ --cov
+>>>>>>> c07d7e33ea5b9bc54c8765f663d4f184c7b7cb94
