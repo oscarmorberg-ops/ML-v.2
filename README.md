@@ -150,4 +150,14 @@ make deploy  # EC2 t2.micro production deployment
 🛡️ s3scan + shscan → TOP i varje terminal!
 💾 git add . → 502 commits ready
 ```
+<<<<<<< Updated upstream
 >>>>>>> c07d7e33ea5b9bc54c8765f663d4f184c7b7cb94
+=======
+## 🚨 Real-time Alerting (CSIO level)
+```bash
+python mlv2/alerting/rt_alert_engine.py  # CRITICAL/HIGH/INFO
+## 🚨 Real-time CSIO Alerting LIVE
+```bash
+python mlv2/alerting/rt_alert_engine.py
+# Output: {'severity': 'CRITICAL', 'action': 'BLOCK + NOTIFY CSIO'}
+>>>>>>> Stashed changes
