@@ -152,3 +152,12 @@ python mlv2/alerting/rt_alert_engine.py  # CRITICAL/HIGH/INFO
 
 python mlv2/alerting/rt_alert_engine.py
 # Output: {'severity': 'CRITICAL', 'action': 'BLOCK + NOTIFY CSIO'}
+## 🖥️ CSIO SIEM Dashboard LIVE
+```bash
+python siem/dashboard/csio_siem.py  # MITRE ATT&CK T1078|T1059|T1566
+## 🗺️ MITRE ATT&CK Mapper (87% coverage)
+```bash
+python mitre/attack/csio_mapper.py  # T1078|T1059|T1566 LIVE!
+## 🎯 SOC Playbook Generator LIVE
+```bash
+python soc/playbooks/csio_generator.py  # T1078|T1059|T1566 playbooks
