@@ -16,7 +16,6 @@ python dashboard.py  # LIVE ML + SOC2 metrics!
 \`\`\`bash
 docker build -t oscp-toolkit .
 docker run oscp-toolkit 10.10.10.x
-\`\`\`
 
 **Juni 2026: OSCP Certified → Global CISO**
 # OSCAR MORBERG - CSIO AWS S3 ML Scanner v2.0
@@ -43,7 +42,6 @@ LIVE<img width="1920" height="1200" alt="ML" src="https://github.com/user-attach
 
 Security NIST 800-53 policy
 <img width="1920" height="1200" alt="NIST policy" src="https://github.com/user-attachments/assets/5409cc7b-a65e-4ff6-be2b-34ed2d6da38e" />
-<<<<<<< HEAD
 source ml_env/bin/activate
 #  ML-PortScanner v2.0
 
@@ -80,7 +78,6 @@ python csio_dashboard.py  # AWS+Azure+GCP LIVE!
 # ML-v2 NIST 800-53 v1.0
 # ML-v2 NIST 800-53 v1.0
 ## Trigger CI/CD run
-=======
 ✅ feat(security): OSCP Buffer Overflow ML detector
 ✅ feat(api): /detect-overflow endpoint (OSCP validated)
 ✅ feat(oscp): PWK lab automation (25pts Buffer Overflow)
@@ -146,18 +143,12 @@ make deploy  # EC2 t2.micro production deployment
 | Security Hub | `shscan` → localhost:8503 | ✅ 27 findings |
 
 **Terminal Beast Mode:**
-```
 🛡️ s3scan + shscan → TOP i varje terminal!
 💾 git add . → 502 commits ready
-```
-<<<<<<< Updated upstream
->>>>>>> c07d7e33ea5b9bc54c8765f663d4f184c7b7cb94
-=======
 ## 🚨 Real-time Alerting (CSIO level)
-```bash
+
 python mlv2/alerting/rt_alert_engine.py  # CRITICAL/HIGH/INFO
 ## 🚨 Real-time CSIO Alerting LIVE
-```bash
+
 python mlv2/alerting/rt_alert_engine.py
 # Output: {'severity': 'CRITICAL', 'action': 'BLOCK + NOTIFY CSIO'}
->>>>>>> Stashed changes
