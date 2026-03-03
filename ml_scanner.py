@@ -9,11 +9,6 @@ class MLPortScanner:
     def __init__(self, max_workers=50):
         self.model = IsolationForest(contamination=0.1)
         self.open_ports = []
-<<<<<<< HEAD
-        self.patterns = []  # ML DATA
-=======
-        self.patterns = []  # ML DATA ← NY RAD!
->>>>>>> c07d7e33ea5b9bc54c8765f663d4f184c7b7cb94
         self.lock = threading.Lock()
         self.max_workers = max_workers
     
