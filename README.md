@@ -165,3 +165,11 @@ python soc/playbooks/csio_generator.py  # T1078|T1059|T1566 playbooks
 ```bash
 python csio/hub/master_hub.py  # 93.5/100 GLOBAL STATUS
 csio-full                      # ALL 6 tools + hub!
+
+🌟 UK CCISO PORTFOLIO | Multiverse Manchester → London CISO 2027
+GLOBAL DASHBOARD v1.1 PRODUCTION: 95.2/100 Risk Score
+✅ NIST 94.2% | ZeroTrust 92.1% | MTTR 12min (PRA SS1/21)
+✅ Rust 1.93.1 + Python S3 Scanner v3 (Spotify/Revolut)
+✅ CCISO Domains 1-5 LIVE | 9e3942bb latest
+
+https://github.com/oscarmorberg-ops/ML-v.2
