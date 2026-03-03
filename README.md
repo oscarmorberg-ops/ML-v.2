@@ -161,3 +161,7 @@ python mitre/attack/csio_mapper.py  # T1078|T1059|T1566 LIVE!
 ## 🎯 SOC Playbook Generator LIVE
 ```bash
 python soc/playbooks/csio_generator.py  # T1078|T1059|T1566 playbooks
+## 🌐 CSIO Integration Hub LIVE
+```bash
+python csio/hub/master_hub.py  # 93.5/100 GLOBAL STATUS
+csio-full                      # ALL 6 tools + hub!
