@@ -3,6 +3,7 @@ use std::error::Error;
 use chrono::{DateTime, Utc};
 
 pub const BUCKET: &str = "oscar-guardduty-findings-eu-north-1";
+pub const REGION: &str = "eu-north-1";
 
 pub async fn scan() -> Result<Vec<String>, Box<dyn std::error::Error>> {
     println!("Scanning GuardDuty: {}", BUCKET);
