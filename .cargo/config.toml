@@ -1,0 +1,4 @@
+[alias]
+cr = "run"
+crr = "run --release"
+cb = "build"
