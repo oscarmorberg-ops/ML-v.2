@@ -20,3 +20,15 @@ pub async fn scan() -> Result<Vec<String>, Box<dyn std::error::Error>> {
     println!("Found {} CRITICAL findings", findings.len());
     Ok(findings)
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[tokio::test]
+    async fn test_scan_finds_critical() {
+        let findings = scan().await.unwrap();
+        assert_eq!(findings.len(), 1);
+        assert!(findings[0].contains("CRITICAL"));
+    }
+}
