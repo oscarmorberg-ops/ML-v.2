@@ -10,16 +10,17 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = Client::new(&config);
     let bucket = "min-cybersec-pipeline-2026";
 
-    println!("🔍 S3 security scan + JSON download: {}", bucket);
+    println!("🔍 S3 security scan + JSON intelligence: {}", bucket);
+
+    let mut risk_scores = Vec::new();
+    let mut threats = 0;
+    let mut anomalies = 0;
+    let mut json_parsed = 0;
 
     match client.list_objects_v2().bucket(bucket).send().await {
         Ok(resp) => {
             let objects = resp.contents();
             println!("✅ {}: {} objects", bucket, objects.len());
-            
-            let mut threats = 0;
-            let mut anomalies = 0;
-            let mut json_parsed = 0;
             
             for obj in objects {
                 if let Some(key) = obj.key() {
@@ -37,10 +38,11 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
                                    else if key.contains("threat") { 9 }
                                    else { 3 };
                     println!("  ⚠️  ML Risk: {}", risk_score);
+                    risk_scores.push(risk_score);
                     
                     // ML ANOMALY
                     if key.starts_with("raw/") && key.contains("scan") {
-                        println!("  🧠 ML ANOMALY: Raw scan");
+                        println!("  🧠 ML ANOMALY: Raw scan data");
                         anomalies += 1;
                     }
                     
@@ -58,9 +60,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
                                     match serde_json::from_slice::<Value>(&bytes) {
                                         Ok(json) => {
                                             println!("  ✅ JSON parsed: {} fields", json.as_object().map_or(0, |o| o.len()));
-                                            if let Some(findings) = json.get("findings").and_then(|f| f.as_array()) {
-                                                println!("  🚨 Scan findings: {}", findings.len());
-                                            }
                                             json_parsed += 1;
                                         }
                                         Err(e) => println!("  ❌ JSON parse error: {:?}", e),
@@ -72,10 +71,19 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
                 }
             }
             
+            // SIEM DASHBOARD (CISO reporting)
+            let avg_risk_score = if !risk_scores.is_empty() {
+                risk_scores.iter().sum::<i32>() as f64 / risk_scores.len() as f64
+            } else { 0.0 };
+            
             println!("🚨 CISO SECURITY REPORT:");
             println!("   Threats: {}", threats);
             println!("   ML Anomalies: {}", anomalies);
             println!("   JSON files parsed: {}", json_parsed);
+            println!("📊 SIEM DASHBOARD:");
+            println!("   CVSS Score: {:.1}", avg_risk_score);
+            println!("   Alert Level: {}", if avg_risk_score > 7.0 { "CRITICAL" } else { "HIGH" });
+            println!("   Recommendation: GuardDuty escalation + SIEM export");
         }
         Err(e) => println!("❌ Error: {:?}", e),
     }
