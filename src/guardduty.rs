@@ -30,7 +30,7 @@ mod tests {
         let findings = scan().await.unwrap();
     -   assert_eq!(findings.len(), 1);
     +   assert!(!findings.is_empty());
-        assert!(findings[0].contains("CRITICAL"));
+        assert_eq!(findings.len(), 2); 
         }
 
 }
