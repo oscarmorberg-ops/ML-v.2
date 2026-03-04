@@ -11,3 +11,5 @@ __pycache__/
 # OS
 .DS_Store
 s3_report_*.json
+# Ignore Rust build artifacts
+target/
