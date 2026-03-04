@@ -1,3 +1,4 @@
+/// GuardDuty S3 findings scanner (eu-north-1)
 use std::error::Error;
 use chrono::{DateTime, Utc};
 
