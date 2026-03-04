@@ -1,0 +1,1 @@
+/home/oscar/cybersec-s3-pipeline/target/debug/cybersec-s3-pipeline: /home/oscar/cybersec-s3-pipeline/src/guardduty.rs /home/oscar/cybersec-s3-pipeline/src/main.rs /home/oscar/cybersec-s3-pipeline/src/s3.rs
