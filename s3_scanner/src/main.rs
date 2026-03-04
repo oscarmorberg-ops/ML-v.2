@@ -3,7 +3,7 @@ use aws_sdk_s3::Client;
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let config = aws_config::from_env()
-        .region("us-east-1")
+        .region("eu-north-1")
         .load()
         .await;
     let client = Client::new(&config);
@@ -23,3 +23,4 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     }
     Ok(())
 }
+
