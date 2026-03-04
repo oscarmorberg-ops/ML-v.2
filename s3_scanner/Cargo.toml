@@ -1,6 +1,9 @@
 [package]
 name = "s3_scanner"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 
 [dependencies]
+aws-config = { version = "1.1", features = ["behavior-version-latest"] }
+aws-sdk-s3 = "1.100"
+tokio = { version = "1", features = ["full"] }
