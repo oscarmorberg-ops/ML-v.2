@@ -1,7 +1,5 @@
 use aws_sdk_s3::Client;
-use aws_sdk_s3::types::ByteStream;
 use serde_json::Value;
-use bytes::Bytes;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
