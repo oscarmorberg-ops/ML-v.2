@@ -1,0 +1,11 @@
+{
+  "Records": [
+    {
+      "eventName": "ObjectCreated:Put",
+      "s3": {
+        "bucket": {"name": "threat-bucket-123"},
+        "object": {"key": "malware.exe"}
+      }
+    }
+  ]
+}
