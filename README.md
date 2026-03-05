@@ -8,3 +8,9 @@ S3 → Event → Lambda Rust/Python → CNN → GuardDuty → SIEM
 ## SIEM Integration
 - GuardDuty → CloudWatch → Custom SIEM dashboard
 - Real-time ML threat visualization
+
+## UK TOP 1% ARCHITECTURE ✅
+- EKS + Istio mTLS + Chaos Engineering
+- Graviton2 60% enterprise savings  
+- Kubeflow ML Ops pipeline
+- Revolut/Monzo/Graphcore-ready portfolio
