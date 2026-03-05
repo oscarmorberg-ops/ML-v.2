@@ -1,4 +1,4 @@
-# PRINCIPAL+ Kubeflow ML Ops Pipeline
+# PRINCIPAL Kubeflow ML Ops
 pipelines = ['s3scan-train', 'cnn-deploy', 'siem-alert']
 for pipe in pipelines:
-    print(f"KUBEFLOW PIPELINE: {pipe} → AutoML production ✓")
+    print(f"KUBEFLOW: {pipe} → AutoML production ✓")
