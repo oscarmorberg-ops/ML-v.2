@@ -25,3 +25,11 @@ def train_malware_model(model, threats):
         print(f"Threat {threat}: {pred[0]}")
     return model
 
+
+# Training loop
+def train_malware_model(model, threats):
+    for threat in threats[:100]:
+        pred = model.predict(np.random.rand(1,64,64,3))
+        print(f"Threat analyzed: {pred[0]}")
+    return model
+
