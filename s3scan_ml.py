@@ -33,3 +33,11 @@ def train_malware_model(model, threats):
         print(f"Threat analyzed: {pred[0]}")
     return model
 
+import boto3
+s3 = boto3.client('s3')
+
+# GuardDuty ML alert
+def alert_guardduty(threat_score):
+    if threat_score > 0.8:
+        print("🚨 HIGH THREAT → GuardDuty alert!")
+    return threat_score
