@@ -16,3 +16,12 @@ def load_s3_threats(bucket):
             threats.append(obj.key)
     return threats
 
+
+# Training loop
+def train_malware_model(model, threats):
+    for threat in threats[:100]:  # Batch training
+        # Simulate threat analysis
+        pred = model.predict(np.random.rand(1,64,64,3))
+        print(f"Threat {threat}: {pred[0]}")
+    return model
+
