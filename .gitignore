@@ -14,3 +14,4 @@ s3_report_*.json
 # Ignore Rust build artifacts
 target/
 target/
+.venv/
