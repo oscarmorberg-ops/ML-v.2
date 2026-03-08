@@ -1,26 +1,19 @@
-# 🔧 CSIO AUTO-VENV (ZSH - SKIPPA Rust)
+# 🔧 CSIO AUTO-VENV (ZSH - Production ready)
 csio_auto_venv() {
   if [[ -d .venv && ! -f Cargo.toml ]]; then
-    source .venv/bin/activate 2>/dev/null
-    echo "🐍 .venv aktiverad automatiskt!"
+    source .venv/bin/activate 2>/dev/null && echo "🐍 .venv LIVE!"
+  elif [[ -n "$VIRTUAL_ENV" ]]; then
+    deactivate 2>/dev/null && echo "🔒 venv off"
   fi
 }
 
-# Auto vid cd
-cd() {
-  builtin cd "$@" 
-  csio_auto_venv
-}
-
-# Cyber alias
-alias cyber="source .venv/bin/activate && echo '🐍 VENV LIVE!'"
-
-# chpwd hook
+# ENBART chpwd hook (ingen cd override)
 autoload -Uz add-zsh-hook
 add-zsh-hook chpwd csio_auto_venv
 
-# Production env vars
+# Cyber aliases
+alias cyber="source .venv/bin/activate && echo '🐍 VENV LIVE!'"
+alias cciso-start="cyber && docker-compose up &"
+
+# AWS + PATH
 export AWS_DEFAULT_REGION=eu-north-1
-export LC_CTYPE=C.UTF-8
-export PATH="$HOME/bin:$HOME/.cargo/bin:$PATH"
-. "$HOME/.cargo/env" 2>/dev/null || true
