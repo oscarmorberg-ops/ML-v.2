@@ -1,9 +1,9 @@
 import boto3
 import os
-from slack_sdk import WebhookClient
-from dotenv import load_dotenv
+#from slack_sdk import WebhookClient
+#from dotenv import load_dotenv
 
-load_dotenv()
+## load_dotenv()
 
 def scan_iam_policies():
     # 🧪 MOCK MODE för Multiverse demo
