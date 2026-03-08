@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  s3scan:
+    image: streamlit/streamlit
+    ports:
+      - "8501:8501"
+  shscan:
+    image: streamlit/streamlit  
+    ports:
+      - "8503:8503"
+  mlscan:
+    ports:
+      - "8504:8504"
+  threatfusion:
+    ports:
+      - "8508:8508"
