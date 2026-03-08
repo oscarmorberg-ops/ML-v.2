@@ -1,0 +1,91 @@
+# 🔥 CCISO LIVE DASHBOARDS v3.0 - KOMPLETT STACK (8501-8506)
+# Ersätt ALLT i ~/.bashrc med detta:
+
+# =============================================================================
+# CCISO CYBERSECURITY STACK - Multiverse UK £45K+ READY
+# =============================================================================
+
+# 🛡️ Säkerhetsfunktioner först
+export AWS_PROFILE=default
+export AWS_DEFAULT_REGION=eu-north-1
+
+# 🔥 LIVE DASHBOARDS (4 parallella Streamlit-appar)
+s3scan() {
+    cd ~/cybersec-s3-pipeline; source venv/bin/activate
+    pkill -f "streamlit.*8501" 2>/dev/null || true
+    echo "🚀 S3 Risk Scanner → http://localhost:8501"
+    streamlit run s3scan.py --server.port=8501
+}
+
+dashboard() {
+    cd ~/cybersec-s3-pipeline; source venv/bin/activate
+    pkill -f "streamlit.*8506" 2>/dev/null || true
+    echo "🚀 SOC2 Dashboard → http://localhost:8506"
+    streamlit run dashboard.py --server.port=8506
+}
+
+shscan() {
+    cd ~/cybersec-s3-pipeline; source venv/bin/activate
+    pkill -f "streamlit.*8503" 2>/dev/null || true
+    echo "🚀 Security Hub → http://localhost:8503"
+    streamlit run securityhub_dashboard.py --server.port=8503
+}
+
+mlscan() {
+    cd ~/actions-runner/ML-v.2; source ml_env/bin/activate
+    pkill -f "streamlit.*8504" 2>/dev/null || true
+    echo "🚀 ML Threat Scanner → http://localhost:8504"
+    streamlit run app.py --server.port=8504
+}
+
+# 💥 Kontrollfunktioner
+killdash() {
+    echo "💥 Stoppar alla CCISO dashboards..."
+    pkill -f streamlit 2>/dev/null || true
+    echo "✅ Alla portar 8501-8506 fria!"
+}
+
+status() {
+    echo "🔍 CCISO Stack Status:"
+    echo "Port 8501: $(lsof -i :8501 | grep LISTEN | wc -l) s3scan"
+    echo "Port 8503: $(lsof -i :8503 | grep LISTEN | wc -l) shscan" 
+    echo "Port 8504: $(lsof -i :8504 | grep LISTEN | wc -l) mlscan"
+    echo "Port 8506: $(lsof -i :8506 | grep LISTEN | wc -l) dashboard"
+}
+
+# 🚀 ONE-CLICK START (4 terminaler)
+cciso-start() {
+    echo "🎬 Startar FULL CCISO-stack (4 dashboards)..."
+    gnome-terminal --tab --title="S3 Scanner 8501" -- bash -c "s3scan; exec bash" &
+    sleep 1
+    gnome-terminal --tab --title="Security Hub 8503" -- bash -c "shscan; exec bash" &
+    sleep 1
+    gnome-terminal --tab --title="ML Scanner 8504" -- bash -c "mlscan; exec bash" &
+    sleep 1
+    gnome-terminal --tab --title="SOC2 Dashboard 8506" -- bash -c "dashboard; exec bash" &
+    echo "✅ Öppna: localhost:8501, 8503, 8504, 8506"
+}
+
+# 📊 Multiverse UK Demo Mode
+cciso-demo() {
+    echo "🇬🇧 MULTIVERSE UK CCISO DEMO MODE (£45K+ READY)"
+    echo "======================================"
+    echo "1. s3scan     → S3 Risk Analysis (8501)"
+    echo "2. shscan     → AWS Security Hub (8503)"  
+    echo "3. mlscan     → ML Threat Detection (8504)"
+    echo "4. dashboard  → SOC2 Compliance (8506)"
+    echo "5. cciso-start → Starta alla 4 dashboards"
+    echo "6. killdash   → Stoppa allt"
+    echo "7. status     → Kolla vilka som körs"
+    echo ""
+    echo "590+ GitHub commits + 4 LIVE dashboards = HIRE ME! 💼"
+}
+
+# 🎯 Quick GitHub pushes
+ghpush() {
+    git add . && git commit -m "$1" && git push
+}
+
+# =============================================================================
+# END CCISO STACK
+# =============================================================================
