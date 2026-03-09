@@ -1,4 +1,4 @@
-#!/home/oscar/cybersec-s3-pipeline/.venv/bin/python3
+#!/home/oscar/cybersec-s3-pipeline/.venv/bin/python
 
 import sys
 import json

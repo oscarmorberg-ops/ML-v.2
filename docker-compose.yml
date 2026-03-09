@@ -1,21 +1,24 @@
 services:
   s3scan:
-    image: python:3.11-slim
+    build: ./s3scan
     ports:
       - "8501:8501"
-    command: streamlit run src/s3scan.py --server.port 8501
+    command: streamlit run src/s3scan.py --server.port=8501 --server.address=0.0.0.0
+
   shscan:
-    image: python:3.11-slim
+    build: ./shscan
     ports:
-      - "8503:8501"  
-    command: streamlit run src/shscan.py --server.port 8501
+      - "8503:8503"
+    command: streamlit run src/shscan.py --server.port=8503 --server.address=0.0.0.0
+
   mlscan:
-    image: python:3.11-slim
+    build: ./mlscan
     ports:
-      - "8504:8501"
-    command: streamlit run src/mlscan.py --server.port 8501
+      - "8504:8504"
+    command: streamlit run src/mlscan.py --server.port=8504 --server.address=0.0.0.0
+
   threatfusion:
-    image: python:3.11-slim
+    build: ./threatfusion
     ports:
-      - "8508:8501"
-    command: streamlit run src/threatfusion.py --server.port 8501
+      - "8508:8508"
+    command: streamlit run src/threatfusion.py --server.port=8508 --server.address=0.0.0.0
