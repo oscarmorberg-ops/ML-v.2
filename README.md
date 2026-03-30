@@ -1,7 +1,8 @@
-## 🔍 ML Security Scanner (Streamlit)
+## ML Security Scanner (Streamlit)
 
 - Run locally: `streamlit run app.py` → the app is available at `http://localhost:8501`.
 - Includes 3 different ML-powered security scans (e.g. risk scoring, anomaly detection, baseline rules).
 
-ML scanner UI:
-<img width="1920" height="1200" alt="MLV2scan" src="https://github.com/user-attachments/assets/6ae0dddb-af8b-4899-b0b0-f11828f306dc" />
+ML scanner v3.0
+<img width="1920" height="1200" alt="Skärmbild från 2026-03-30 14-37-56" src="https://github.com/user-attachments/assets/dd3d00ff-8a8a-4178-8231-ed346ec380b2" />
+
